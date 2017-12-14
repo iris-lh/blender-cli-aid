@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source render-helper.conf
+source .blender-cli-aid.conf
 # BLENDER_PATH
 # JOBS_PATH
 
