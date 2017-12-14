@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source .blender-cli-aid.conf
+source $HOME/blender-cli-aid.conf
 # BLENDER_PATH
 # JOBS_PATH
 
