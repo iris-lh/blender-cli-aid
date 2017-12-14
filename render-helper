@@ -1,0 +1,29 @@
+#!/bin/bash
+
+source render-helper.conf
+# BLENDER_PATH
+# JOBS_PATH
+
+JOB_PATH=$JOBS_PATH/$1
+
+source $JOB_PATH/$1.txt
+
+OUTPUT_OPTION="-o $JOB_PATH/frames/"
+START_FRAME_OPTION=''
+END_FRAME_OPTION=''
+ANIMATION_OPTION=''
+
+if [[ -z "${START_FRAME_OPTION// }" ]]; then
+  START_FRAME_OPTION=" -s $START"
+fi
+
+if [[ -z "${END_FRAME_OPTION// }" ]]; then
+  END_FRAME_OPTION=" -e $END"
+fi
+
+if [[ $ANIMATION ]]; then
+  ANIMATION_OPTION=" -a"
+fi
+
+
+echo "$BLENDER_PATH" -b "$JOBS_PATH"/"$NAME".blend "$OUTPUT_OPTION""$OUTPUT_PATH""$START_FRAME_OPTION""$END_FRAME_OPTION""$ANIMATION_OPTION"
